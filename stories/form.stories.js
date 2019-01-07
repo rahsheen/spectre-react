@@ -4,7 +4,7 @@ import { text, boolean } from '@storybook/addon-knobs'
 
 import {
   Icon, Button, Label,
-  FormGroup, Input, Checkbox,
+  FormGroup, Input, Checkbox, Radio,
   Container, Col, Row
 } from '../src'
 
@@ -51,6 +51,21 @@ storiesOf('Forms', module)
             <Checkbox label='Disabled Checkbox' disabled />
             <Checkbox label='Indeterminate Checkbox' indeterminate />
             <Checkbox label='Small'
+              small={boolean('small', true)}
+              large={boolean('large', false)} />
+          </form>
+        </Col>
+      </Row>
+    </Container>
+  )).add('Radio', () => (
+    <Container>
+      <Row>
+        <Col all={6} xs={12}>
+          <form>
+            <Radio label='Basic Radio' />
+            <Radio label='Disabled Radio' disabled />
+            <Radio label='Indeterminate Radio' indeterminate />
+            <Radio label='Small'
               small={boolean('small', true)}
               large={boolean('large', false)} />
           </form>
